@@ -82,9 +82,10 @@ main > section.im-hero.im > .wrap { z-index: 2; padding: calc(var(--nav) + 40px)
 
 .im-hero h1 { margin: 0; font: inherit; letter-spacing: 0; max-width: none; }
 .im-display { display: block; font: 400 clamp(46px, 7.3vw, 120px)/.95 var(--font-display); letter-spacing: -.036em; color: #fff; }
-.im-line { display: block; overflow: hidden; padding-bottom: .09em; margin-bottom: -.09em; }
+/* the mask each line rises through: room above for the dot of an i and the tall letters, below for the g */
+.im-line { display: block; overflow: hidden; padding: .14em 0 .09em; margin: -.14em 0 -.09em; }
 .im-line > span { display: inline-block; }
-.im-js .im-line > span { transform: translateY(108%); transition: transform 1.1s var(--im-ease); transition-delay: calc(.55s + var(--i, 0) * .12s); }
+.im-js .im-line > span { transform: translateY(130%); transition: transform 1.1s var(--im-ease); transition-delay: calc(.55s + var(--i, 0) * .12s); }
 .im-ready .im-line > span { transform: none; }
 .im-h1sub { display: block; margin-top: clamp(18px, 2.6vh, 28px); font: 500 clamp(17px, 1.45vw, 21px)/1.4 var(--font-text); color: var(--im-mist); max-width: 44ch; }
 .im-hero__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--s-7); margin-top: clamp(20px, 3vh, 32px); }
@@ -365,8 +366,8 @@ main > section.im-request.im { background: linear-gradient(180deg, var(--im-pape
 @media (min-width: 1024px) { .im-foot__legal > :last-child { margin-left: auto; } }
 
 /* the magnetic wrapper keeps the kit's own button transforms free */
-.im-magnet { display: inline-block; transform: translate3d(var(--mx, 0px), var(--my, 0px), 0); transition: transform .5s var(--im-ease); }
-.im-magnet.is-near { transition-duration: .12s; }
+/* the call button's wrapper: it holds the button's place in the row and stays put */
+.im-magnet { display: inline-block; }
 
 /* ------------------------------------------------------------------ smaller screens */
 @media (max-width: 1023px) {
@@ -413,7 +414,7 @@ main > section.im-request.im { background: linear-gradient(180deg, var(--im-pape
   .im-js .im-line > span, .im-js .im-fade { transform: none; opacity: 1; transition: none; }
   .im-dot::after, .im-office__ring { animation: none; }
   .im-js .im-bars__bar i { transform: none; transition: none; }
-  .im-magnet, .im-film__media { transform: none !important; }
+  .im-film__media { transform: none !important; }
 }
 
 /* === scene:start === */

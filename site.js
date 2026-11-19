@@ -508,20 +508,13 @@ function reveals() {
   }
 }
 
-/* ------------------------------------------------------------------ small touches for a mouse: a magnetic button, a ring that follows */
+/* ------------------------------------------------------------------ a small touch for a mouse: the "Play" badge that follows the pointer over a film */
 function pointerTouches() {
   if (!fine || reduce) return;
-  const mags = $$('.im-magnet');
   const ring = $('.im-cursor'), label = ring ? $('span', ring) : null;
   let tx = -100, ty = -100, x = -100, y = -100;
   addEventListener('pointermove', e => {
     tx = e.clientX; ty = e.clientY;
-    for (const m of mags) {
-      const r = m.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2, dx = e.clientX - cx, dy = e.clientY - cy;
-      const near = Math.abs(dx) < r.width / 2 + 70 && Math.abs(dy) < r.height / 2 + 60;
-      m.classList.toggle('is-near', near);
-      m.style.setProperty('--mx', near ? (dx * 0.22).toFixed(1) + 'px' : '0px'); m.style.setProperty('--my', near ? (dy * 0.3).toFixed(1) + 'px' : '0px');
-    }
     if (ring) {
       const lab = e.target.closest ? e.target.closest('[data-cursor]') : null;
       ring.classList.toggle('has-label', !!lab); if (label && lab) label.textContent = lab.dataset.cursor;
