@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" data-type="service" data-radius="soft" data-buttons="tonal" data-motion data-nav="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Southeast Restoration: property damage restoration in Augusta, Georgia</title>
+<meta name="description" content="Water, fire, storm and mold damage repaired by one licensed general contractor. Southeast Restoration's Evans office answers 24 hours a day across the Augusta area.">
+<!-- Concept preview: keep this page out of search results until it replaces the live site. Remove at launch. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Southeast Restoration: property damage restoration in Augusta, Georgia">
+<meta property="og:description" content="Water, fire, storm and mold damage repaired by one licensed general contractor, 24 hours a day.">
+<meta property="og:url" content="https://calebgarrard-source.github.io/southeast-restoration/">
+<meta property="og:image" content="https://calebgarrard-source.github.io/southeast-restoration/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<meta name="theme-color" content="#060b14">
+<!-- Preview hosting: og:url, og:image and this canonical use the preview address. At launch, change all three to the company's own domain. -->
+<link rel="canonical" href="https://calebgarrard-source.github.io/southeast-restoration/">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-full.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<style>
+:root {
+  --p-bg: #f6f8fb; --p-surface: #edf1f7; --p-ink: #0f1e31; --p-muted: #536074;
+  --p-accent: #ba0c2f; --p-accent-ink: #f8fafc; --p-action: #ba0c2f; --p-action-ink: #f8fafc;
+  --p-inv-bg: #0f1e31; --p-inv-surface: #1c2b3d; --p-inv-ink: #f8fafc; --p-inv-muted: #969fa9;
+  --p-inv-accent: #f8fafc; --p-inv-accent-ink: #0f1e31; --p-inv-action: #f8fafc; --p-inv-action-ink: #0f1e31;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.018em;
+  --display-tracking-xl: -0.025em;
+}
+</style>
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('im-js')</script>
+</head>
+<body>
+<!-- Southeast Restoration, Augusta office: an immersive one-page site.
+     The idea: one night. The storm seen through a wet window (the hero's rain is live; the pointer wipes the glass),
+     "What happened?" (four kinds of damage, the first ten minutes for each), the repair as a pinned sequence whose sky
+     goes from night to morning, then the day after: reviews as data, films that play on the page, the company,
+     the service map with a town finder, the form.
+     Built on the taste kit's tokens, grid, nav, buttons and form (assets/), with its own layer in site.css and site.js.
+     The photographs and the films are the client's own. The service map, the five value cards and the house
+     drawing in the repair sequence are drawn for this site. -->
+
+<div class="im-curtain" aria-hidden="true"><div class="im-curtain__in"><img src="assets/img/emblem.png" alt="" width="132" height="51">Southeast Restoration</div></div>
+<div class="im-progress" aria-hidden="true"></div>
+<div class="im-cursor" aria-hidden="true"><span></span></div>
+
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><img src="assets/img/emblem.png" alt="" width="68" height="26">Southeast Restoration</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item">
+        <a class="nav__link" href="#triage">Services <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <a class="menu-card span-3" href="#triage">
+              <div class="panel"><img class="frame__img" src="assets/img/nav-water.webp" alt="A subfloor opened up to the joists after a water leak" width="580" height="435" data-source="client" data-subject="water damage"></div>
+              <span class="t-card">Water damage</span>
+              <span class="t-small muted">Burst pipes, leaks and flooding</span>
+            </a>
+            <a class="menu-card span-3" href="#triage">
+              <div class="panel"><img class="frame__img" src="assets/img/nav-fire.webp" alt="Flames spreading across a room" width="480" height="360" data-source="client" data-subject="fire damage"></div>
+              <span class="t-card">Fire and smoke</span>
+              <span class="t-small muted">Soot, odor and structural repairs</span>
+            </a>
+            <a class="menu-card span-3" href="#triage">
+              <div class="panel"><img class="frame__img" src="assets/img/nav-emergency.webp" alt="Emergency lights on a street at night" width="389" height="292" data-source="client" data-subject="emergency response"></div>
+              <span class="t-card">Storm and emergencies</span>
+              <span class="t-small muted">Board-ups and tarps at any hour</span>
+            </a>
+            <a class="menu-card span-3" href="#triage">
+              <div class="panel"><img class="frame__img" src="assets/img/nav-rebuild.webp" alt="Three people measuring a door frame during a repair" width="640" height="480" data-source="client" data-subject="reconstruction"></div>
+              <span class="t-card">Mold and rebuilds</span>
+              <span class="t-small muted">Removal, then roofs, floors and walls</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#process">Process</a></div>
+      <div class="nav__item"><a class="nav__link" href="#reviews">Reviews</a></div>
+      <div class="nav__item"><a class="nav__link" href="#areas">Areas</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO: the client's photograph of a storm-damaged house behind a pane of live rain; the pointer wipes it clear -->
+  <section class="im im-hero im-dark" id="hero" aria-labelledby="hero-h">
+    <div class="im-hero__media">
+      <img src="assets/img/hero-full.webp" data-blur="assets/img/hero-blur.webp" alt="A brick house with its roof and wall torn open by a fallen tree" width="1920" height="963" fetchpriority="high" data-source="client" data-subject="storm damage">
+      <canvas aria-hidden="true"></canvas>
+    </div>
+    <div class="im-hero__shade" aria-hidden="true"></div>
+    <p class="im-hint" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 13c3-6 8-8 14-7"/><path d="M13.500 3.500 17 6l-2.500 3.500"/></svg>Move across the glass to wipe it</p>
+    <div class="wrap">
+      <p class="im-status im-fade"><span class="im-dot" aria-hidden="true"></span><span data-im-clock>Open 24 hours, every day</span></p>
+      <h1 id="hero-h">
+        <span class="im-display"><span class="im-line" style="--i:0"><span>The worst night.</span></span><span class="im-line" style="--i:1"><span>Then the morning after.</span></span></span>
+        <span class="im-h1sub im-fade">Water, fire and storm damage restoration in Augusta, Georgia</span>
+      </h1>
+      <div class="im-hero__row im-fade">
+        <div>
+          <p class="im-hero__lede">One licensed contractor from the first call to the rebuild. The Evans office answers 24 hours a day.</p>
+          <div class="im-hero__cta">
+            <span class="im-magnet"><a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a></span>
+            <a class="btn btn--secondary" href="#request">Request an inspection</a>
+          </div>
+        </div>
+        <a class="im-play" href="https://www.youtube.com/watch?v=UUkhngoXlYc" data-film="UUkhngoXlYc" data-cursor="Play">
+          <span class="im-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.500 2.600v12.800c0 .8.900 1.300 1.600.9l10.300-6.400c.6-.4.6-1.300 0-1.700L6.100 1.700c-.7-.4-1.600.1-1.600.9Z" fill="currentColor"/></svg></span>
+          <span>Play the film<small>A church flood on Christmas Day, 7:00</small></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIAGE: what happened? Four kinds of damage; each opens the first ten minutes and what the crew does -->
+  <section class="im im-triage im-dark" id="triage" data-mode="water" aria-labelledby="triage-h">
+    <canvas class="im-weather" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="im-head" data-reveal>
+        <h2 class="im-h2" id="triage-h">What happened?</h2>
+        <p class="im-lead">Pick one. You get the first ten minutes, and what our crew does when it arrives.</p>
+      </div>
+      <div class="im-modes" role="tablist" aria-label="Kind of damage" data-reveal style="--d:1">
+        <button class="im-mode" role="tab" type="button" id="tab-water" data-mode="water" aria-selected="true" aria-controls="panel-water">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.200c3.200 3.900 5.600 6.900 5.600 10a5.600 5.600 0 0 1-11.200 0c0-3.100 2.400-6.100 5.600-10Z"/><path d="M9.600 14.200a2.600 2.600 0 0 0 2.200 2.400"/></svg>
+          <b>Water</b><small>Burst pipes, leaks, flooding</small>
+        </button>
+        <button class="im-mode" role="tab" type="button" id="tab-fire" data-mode="fire" aria-selected="false" aria-controls="panel-fire" tabindex="-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c3.600 0 6-2.500 6-5.800 0-2.500-1.400-4.200-2.600-5.700-.4 1.300-1.100 2-2 2.300.4-2.900-.6-5.600-3.200-7.800.2 2.700-1 4.300-2.200 5.900C6.900 11.300 6 12.900 6 15.200 6 18.500 8.400 21 12 21Z"/></svg>
+          <b>Fire</b><small>Flames, smoke, soot</small>
+        </button>
+        <button class="im-mode" role="tab" type="button" id="tab-storm" data-mode="storm" aria-selected="false" aria-controls="panel-storm" tabindex="-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 15.500h8.200a3.300 3.300 0 0 0 .4-6.600A4.700 4.700 0 0 0 6.600 9.900 2.900 2.900 0 0 0 7 15.500Z"/><path d="M9 18.500l-1 2M13 18.500l-1 2M17 18.500l-1 2"/></svg>
+          <b>Storm</b><small>Fallen trees, roof leaks, hail</small>
+        </button>
+        <button class="im-mode" role="tab" type="button" id="tab-mold" data-mode="mold" aria-selected="false" aria-controls="panel-mold" tabindex="-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.600"/><circle cx="15.500" cy="7.500" r="1.600"/><circle cx="15" cy="14.500" r="3.100"/><circle cx="8.500" cy="16.500" r="1.400"/></svg>
+          <b>Mold</b><small>Damp rooms, musty air</small>
+        </button>
+      </div>
+
+      <div class="im-panel" id="panel-water" role="tabpanel" aria-labelledby="tab-water" data-reveal style="--d:2">
+        <div>
+          <h3>In the next ten minutes</h3>
+          <ul class="im-check">
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Shut off the water at the main valve, if a pipe or an appliance is leaking.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Switch off power to the wet rooms at the breaker, only if the panel is dry and safe to reach.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Lift rugs, electronics and valuables off the wet floor.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Take photographs before anything is moved, for your insurance claim.</span></button></li>
+          </ul>
+          <p class="im-tally"><i></i><span><b>0</b> of 4 done</span></p>
+        </div>
+        <div class="im-panel__aside">
+          <h3>What our crew does</h3>
+          <ol class="im-does"><li>Extracts the standing water.</li><li>Dries the structure with air movers and dehumidifiers.</li><li>Cleans, disinfects and repairs what the water reached.</li></ol>
+          <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+          <p class="t-small">Not urgent? <a href="#request">Send the details</a> and we reply within one business day.</p>
+        </div>
+      </div>
+
+      <div class="im-panel" id="panel-fire" role="tabpanel" aria-labelledby="tab-fire" hidden>
+        <div>
+          <h3>In the next ten minutes</h3>
+          <ul class="im-check">
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Stay out until the fire department says the building is safe.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Leave the soot on walls and furniture alone: wiping pushes it deeper.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Keep the heating and air off, so soot does not travel through the house.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Take photographs, and call your insurance company.</span></button></li>
+          </ul>
+          <p class="im-tally"><i></i><span><b>0</b> of 4 done</span></p>
+        </div>
+        <div class="im-panel__aside">
+          <h3>What our crew does</h3>
+          <ol class="im-does"><li>Boards up and secures the building.</li><li>Removes soot, smoke and the odor they leave.</li><li>Rebuilds what burned, down to the structure.</li></ol>
+          <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+          <p class="t-small">Not urgent? <a href="#request">Send the details</a> and we reply within one business day.</p>
+        </div>
+      </div>
+
+      <div class="im-panel" id="panel-storm" role="tabpanel" aria-labelledby="tab-storm" hidden>
+        <div>
+          <h3>In the next ten minutes</h3>
+          <ul class="im-check">
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Stay clear of downed power lines, and report them to the utility.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Stay off the roof. Tarping it is our job.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>If rain is coming in, move what you can out of the room.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Photograph the damage from the ground.</span></button></li>
+          </ul>
+          <p class="im-tally"><i></i><span><b>0</b> of 4 done</span></p>
+        </div>
+        <div class="im-panel__aside">
+          <h3>What our crew does</h3>
+          <ol class="im-does"><li>Tarps the roof and boards the openings.</li><li>Clears the debris and the fallen limbs.</li><li>Repairs the roof and the structure under it.</li></ol>
+          <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+          <p class="t-small">Not urgent? <a href="#request">Send the details</a> and we reply within one business day.</p>
+        </div>
+      </div>
+
+      <div class="im-panel" id="panel-mold" role="tabpanel" aria-labelledby="tab-mold" hidden>
+        <div>
+          <h3>In the next ten minutes</h3>
+          <ul class="im-check">
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Leave it alone: scrubbing or bleach spreads the spores.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Turn off fans and the air system near it.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Stop the moisture if you can see it: a leak, a drip, standing water.</span></button></li>
+            <li><button type="button" aria-pressed="false"><span class="im-box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.500 8.500l3 3 6-6.500"/></svg></span><span>Keep children and pets out of the room.</span></button></li>
+          </ul>
+          <p class="im-tally"><i></i><span><b>0</b> of 4 done</span></p>
+        </div>
+        <div class="im-panel__aside">
+          <h3>What our crew does</h3>
+          <ol class="im-does"><li>Inspects, and finds where the moisture comes from.</li><li>Contains the area with HEPA filtration and removes the mold.</li><li>Cleans, repairs and tells you how to keep it from coming back.</li></ol>
+          <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+          <p class="t-small">Not urgent? <a href="#request">Send the details</a> and we reply within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE REPAIR: four steps, told by one drawing of a house (the template at the foot of the page). On a desktop the
+       section pins and the scene goes from the storm night to the morning; elsewhere each step carries its own copy.
+       The client's photograph of each moment sits on the drawing, small. -->
+  <section class="im im-seq" id="process" aria-labelledby="process-h">
+    <div class="im-seq__stage">
+      <div class="wrap im-seq__grid">
+        <div>
+          <h2 class="im-h2" id="process-h">From the call to the last coat of paint</h2>
+          <ol class="im-steps">
+            <li class="im-step">
+              <h3><i>01</i>You call, a crew comes out</h3>
+              <p>The Evans office answers at any hour and sends a crew to the property.</p>
+              <figure><img src="assets/img/truck-night.webp" alt="A Southeast Restoration truck parked outside a lit house at night" width="664" height="498" loading="lazy" decoding="async" data-source="client" data-subject="emergency response"></figure>
+            </li>
+            <li class="im-step">
+              <h3><i>02</i>We stop the damage</h3>
+              <p>Water out, the roof tarped, openings boarded. The building is made safe before anything else.</p>
+              <figure><img src="assets/img/step-storm.webp" alt="A tree fallen across a roof and a back deck, seen from above" width="960" height="720" loading="lazy" decoding="async" data-source="client" data-subject="storm damage"></figure>
+            </li>
+            <li class="im-step">
+              <h3><i>03</i>We dry it, and deal with the insurer</h3>
+              <p>Drying equipment runs until the structure is dry. We handle the documentation and the calls with your insurance company.</p>
+              <figure><img src="assets/img/step-gym.webp" alt="A crew working across a marked-out school gym floor" width="664" height="498" loading="lazy" decoding="async" data-source="client" data-subject="commercial water damage"></figure>
+            </li>
+            <li class="im-step">
+              <h3><i>04</i>We rebuild what was lost</h3>
+              <p>The same licensed contractor repairs the roof, the walls and the floors, and the work comes with a warranty.</p>
+              <figure><img src="assets/img/team.webp" alt="A Southeast Restoration carpenter cutting trim in a new kitchen" width="480" height="428" loading="lazy" decoding="async" data-source="client" data-subject="reconstruction"></figure>
+            </li>
+          </ol>
+          <div class="im-sky" aria-hidden="true"><span>Night</span><span class="im-sky__track"><span class="im-sky__orb"></span></span><span>Morning</span></div>
+        </div>
+        <div class="im-seq__frame"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the towns, moving with the scroll -->
+  <div class="im-marquee" aria-hidden="true">
+    <div class="im-marquee__row">Augusta <span>&middot;</span> Evans <span>&middot;</span> Martinez <span>&middot;</span> Grovetown <span>&middot;</span> Hephzibah <span>&middot;</span> North Augusta <span>&middot;</span> Aiken <span>&middot;</span> Augusta <span>&middot;</span> Evans <span>&middot;</span> Martinez <span>&middot;</span> Grovetown <span>&middot;</span> Hephzibah <span>&middot;</span> North Augusta <span>&middot;</span> Aiken <span>&middot;</span></div>
+  </div>
+
+  <!-- REVIEWS as data: the Augusta office's Google rating and what its reviewers mention, counted by Google -->
+  <section class="im im-proof" id="reviews" aria-labelledby="reviews-h">
+    <div class="wrap im-g im-proof__grid">
+      <div data-reveal>
+        <p class="im-eyebrow">The Augusta office on Google</p>
+        <h2 class="im-rating" id="reviews-h"><span data-im-count="4.8" data-decimals="1">4.8</span><small>out of 5, from <span data-im-count="600">600</span> reviews</small></h2>
+        <span class="im-stars" role="img" aria-label="4.8 out of 5 stars">
+          <span class="im-stars__off"><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg></span>
+          <span class="im-stars__on"><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.800l2.500 5.300 5.700.7-4.200 4 1.100 5.700L10 14.700l-5.100 2.800 1.100-5.700-4.200-4 5.700-.7Z"/></svg></span>
+        </span>
+        <p class="im-lead">Six hundred neighbors have written about the Evans crews. The chart shows what they bring up most.</p>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Southeast+Restoration+Evans+GA" target="_blank" rel="noopener">Read the Google reviews</a>
+      </div>
+      <div data-reveal style="--d:1">
+        <p class="im-bars__title">What reviewers mention, counted by Google</p>
+        <ol class="im-bars">
+          <li tabindex="0" style="--v:49;--i:0" data-note="49 of the 600 reviews mention a quick response."><span>Quick response</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">49</span></li>
+          <li tabindex="0" style="--v:40;--i:1" data-note="40 reviews mention the courteous staff."><span>Courteous staff</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">40</span></li>
+          <li tabindex="0" style="--v:35;--i:2" data-note="35 reviews are about water damage restoration."><span>Water damage</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">35</span></li>
+          <li tabindex="0" style="--v:24;--i:3" data-note="24 reviews mention mitigation: stopping the damage first."><span>Mitigation</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">24</span></li>
+          <li tabindex="0" style="--v:8;--i:4" data-note="8 reviews are about mold remediation."><span>Mold remediation</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">8</span></li>
+          <li tabindex="0" style="--v:5;--i:5" data-note="5 reviews mention storm damage repair."><span>Storm damage</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">5</span></li>
+          <li tabindex="0" style="--v:5;--i:6" data-note="5 reviews mention a roof repair."><span>Roof repair</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">5</span></li>
+          <li tabindex="0" style="--v:5;--i:7" data-note="5 reviews mention a water leak."><span>Water leak</span><span class="im-bars__bar"><i></i></span><span class="im-bars__n">5</span></li>
+        </ol>
+        <p class="im-bars__note" aria-live="polite">Point at a row to read it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMS: three of the client's own, played on the page -->
+  <section class="im im-films" id="films" aria-labelledby="films-h">
+    <div class="wrap">
+      <div class="im-head" data-reveal>
+        <h2 class="im-h2" id="films-h">Three short films</h2>
+        <p class="im-lead">A flooded church, a frozen Augusta winter and a day of service.</p>
+      </div>
+      <div class="im-films__grid">
+        <a class="im-film" href="https://www.youtube.com/watch?v=UUkhngoXlYc" data-film="UUkhngoXlYc" data-cursor="Play" data-reveal>
+          <div class="im-film__media"><img src="assets/img/story-church.webp" alt="A crew in safety vests cleaning up inside a church sanctuary" width="520" height="292" loading="lazy" decoding="async" data-source="client" data-subject="church flood cleanup"><span class="im-film__time"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg>7:00</span></div>
+          <h3>Canton First Baptist Church</h3>
+          <p>After a Christmas Day flood</p>
+        </a>
+        <a class="im-film" href="https://www.youtube.com/watch?v=0GPMavyrN4w" data-film="0GPMavyrN4w" data-cursor="Play" data-reveal style="--d:1">
+          <div class="im-film__media"><img src="assets/img/film-augusta.webp" alt="A floor opened up to its joists during a repair" width="580" height="326" loading="lazy" decoding="async" data-source="client" data-subject="Augusta water damage repair"><span class="im-film__time"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg>4:25</span></div>
+          <h3>Augusta, the 2014 freeze</h3>
+          <p>A repair after the polar vortex</p>
+        </a>
+        <a class="im-film" href="https://www.youtube.com/watch?v=t031qet0Ygk" data-film="t031qet0Ygk" data-cursor="Play" data-reveal style="--d:2">
+          <div class="im-film__media"><img src="assets/img/story-service.webp" alt="Volunteers from the team in front of a house with a lawn mower" width="960" height="540" loading="lazy" decoding="async" data-source="client" data-subject="day of service"><span class="im-film__time"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg>3:18</span></div>
+          <h3>A day of service</h3>
+          <p>The team's volunteer day</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE COMPANY: the facts, and its five house rules as a deck of cards -->
+  <section class="im im-values" id="company" aria-labelledby="company-h">
+    <div class="wrap im-g im-values__grid">
+      <div data-reveal>
+        <h2 class="im-h2" id="company-h">Restoring homes since 1999</h2>
+        <p class="im-lead">Southeast Restoration is a licensed general contractor that specializes in insurance repairs. The Evans office is one of seven, and it covers the Augusta area.</p>
+        <ul class="rows rows--spec">
+          <li><span class="rows__name">Technicians</span><span class="rows__value">IICRC certified</span></li>
+          <li><span class="rows__name">Lead-safe work</span><span class="rows__value">EPA Lead-Safe Certified Firm</span></li>
+          <li><span class="rows__name">Insurance</span><span class="rows__value">All providers</span></li>
+          <li><span class="rows__name">Workplace</span><span class="rows__value">Inc. Best Workplaces 2024</span></li>
+        </ul>
+      </div>
+      <div data-reveal style="--d:1">
+        <ul class="im-deck" aria-label="The company's five house rules">
+          <li class="im-card im-card--navy" tabindex="0" data-note="Every place we work is left in better shape than we found it.">
+            <span class="im-card__n">01</span>
+            <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24 24 9l17 15"/><path d="M12 20v19h24V20"/><path d="M20 39V28h8v11"/></svg>
+            <strong>Leave it better than you found it</strong>
+          </li>
+          <li class="im-card im-card--peri" tabindex="0" data-note="The work is for people on one of their hardest days.">
+            <span class="im-card__n">02</span>
+            <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="6"/><path d="M7 26c2 9 8 14 17 14s15-5 17-14"/></svg>
+            <strong>Serve with compassion</strong>
+          </li>
+          <li class="im-card im-card--paper" tabindex="0" data-note="Colossians 3:23, the verse the company works by.">
+            <span class="im-card__n">03</span>
+            <span class="im-card__big" aria-hidden="true">3:23</span>
+            <strong>Colossians 3:23</strong>
+          </li>
+          <li class="im-card im-card--dawn" tabindex="0" data-note="Trucks, tools and your floors: kept clean, every day.">
+            <span class="im-card__n">04</span>
+            <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="3"/><path d="M15 33 33 15"/><path d="M24 35l11-11"/></svg>
+            <strong>Everything clean, always</strong>
+          </li>
+          <li class="im-card im-card--storm" tabindex="0" data-note="A crew that likes the work does it better.">
+            <span class="im-card__n">05</span>
+            <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M16 28c2 4 4.500 6 8 6s6-2 8-6"/><path d="M18 19v2M30 19v2"/></svg>
+            <strong>Make it fun</strong>
+          </li>
+        </ul>
+        <p class="im-deck__note" aria-live="polite">The company's five house rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS: the service map, redrawn from the client's own, a town finder, the office -->
+  <section class="im im-areas" id="areas" aria-labelledby="areas-h">
+    <div class="wrap im-g im-areas__grid">
+      <div data-reveal>
+        <h2 class="im-h2" id="areas-h">Five counties around Augusta</h2>
+        <div class="im-finder">
+          <label for="im-town">Is your town covered?</label>
+          <div class="im-finder__field"><input id="im-town" type="text" autocomplete="off" spellcheck="false" aria-describedby="im-town-out"></div>
+          <ul class="im-finder__list" aria-label="Towns"></ul>
+          <p class="im-finder__out" id="im-town-out" role="status"></p>
+        </div>
+        <ul class="visit__rows">
+          <li><span>Office</span><address style="font-style: normal">529 Grand Slam Drive, Evans, GA 30809</address></li>
+          <li><span>Hours</span><span>Open 24 hours, every day</span></li>
+        </ul>
+        <div class="btn-row" style="margin-top: var(--s-5)"><a class="btn btn--secondary" href="https://www.openstreetmap.org/search?query=529%20Grand%20Slam%20Drive%20Evans%20GA" target="_blank" rel="noopener">Get directions</a></div>
+      </div>
+      <figure class="im-map" data-reveal style="--d:1">
+        <svg class="im-map__svg" viewBox="-330 0 1405 925" role="group" aria-label="The Augusta office's service area: Columbia, McDuffie, Richmond and Burke counties in Georgia and Aiken County in South Carolina, either side of the Savannah River">
+          <text class="im-map__state" x="-286" y="96">Georgia</text>
+          <text class="im-map__state" x="404" y="80">South Carolina</text>
+          <path class="im-map__lake" d="M347 206 L311 138 L303.5 132.5 L299.5 136 L300.5 139 L299 142 L300.5 145 L297.5 147 L297 151.5 L300.5 152.5 L305 147.5 L307 149 L307.5 152.5 L313.5 154 L312 156.5 L307 157.5 L306.5 162.5 L304.5 165 L311.5 168.5 L317 168 L318.5 169.5 L317 173 L318.5 176 L315 178 L307.5 177 L303.5 180 L300 180.5 L298.5 179.5 L299.5 174.5 L297 168.5 L294 168.5 L292.5 175 L290.5 173.5 L291.5 167.5 L289 165.5 L291.5 162 L286.5 159.5 L285 157 L282 157 L280.5 159 L277.5 156.5 L275 158 L274 161.5 L267 161.5 L267.5 155 L258.5 153 L255 155.5 L252.5 162 L256.5 164.5 L262 165 L265.5 168.5 L264.5 170 L253 169.5 L250 170.5 L247.5 174 L242.5 172 L237 175.5 L229 175.5 L224 169 L221 172 L217 171.5 L216.5 173.5 L219.5 175.5 L220 178 L224.5 178.5 L229 182 L229 185 L218 193.5 L210.5 194 L209 196.5 L207.5 194 L204.5 194 L204 201 L193.5 201 L188 197.5 L185 197.5 L185.5 202 L192 204 L192 206 L188.5 206.5 L173.5 216 L169.5 216 L167 219 L162.5 220 L159.5 216.5 L157.5 216.5 L156.5 214 L147 210 L144 206 L134.5 208.5 L134 210.5 L137 212 L137 214 L133.5 214.5 L133.5 212 L131.5 210.5 L119 216.5 L110 216 L108 217.5 L100.5 214.5 L98.5 217.5 L104.5 225 L108.5 224.5 L108.5 221 L106 220 L108 219 L111.5 221 L111.5 224.5 L116.5 226 L120 223 L119.5 221 L117 220 L119 218.5 L122.5 219.5 L125.5 218 L133.5 221.5 L136 221 L138 218 L138 214 L142 211.5 L144 214.5 L155.5 217 L156.5 220 L155 226 L146.5 227.5 L145 232.5 L146 236 L142.5 238.5 L143 242.5 L146.5 243.5 L147 237.5 L149 236.5 L149.5 233.5 L154.5 231 L156.5 227 L163.5 225 L168 227 L163.5 231 L164 239.5 L162.5 243 L164.5 244.5 L167.5 241.5 L167 239.5 L171 231.5 L170.5 228.5 L176.5 223.5 L177 220.5 L183 221 L187 219.5 L189.5 221.5 L196.5 223 L204.5 221 L205 218.5 L209.5 216 L215.5 208.5 L223 206 L224.5 203.5 L226.5 204.5 L229 202 L230.5 203.5 L227.5 207 L235.5 219.5 L238.5 219.5 L239.5 205.5 L241 202.5 L238 200.5 L239.5 199 L243 201.5 L248 200.5 L249 197.5 L262 189 L266.5 189.5 L269 191.5 L272 190.5 L300.5 196.5 L288.5 203 L286.5 207 L289.5 211 L289.5 216.5 L291.5 217.5 L294 215 L295.5 216 L296 218.5 L293 219 L292.5 221 L297.5 227 L302 220.5 L300.5 217 L302 212 L310.5 206.5 L329 205 L329 202 L326 200 L328 197.5 L333.5 199 L334 201 L331 202 L330.5 204 L332.5 205.5 L331 209.5 L334 212 L345.5 211Z"/>
+          <g class="im-county" tabindex="0" role="button" data-county="McDuffie" aria-label="McDuffie County, Georgia"><path d="M51.5 245.5 L90.5 361 L91.5 372 L111 394 L120.5 425.5 L120.5 434 L117.5 445 L126.5 446 L149.5 460.5 L161 456.5 L183 459 L201 466 L209.5 475.5 L221 480 L241.5 477.5 L252 478.5 L270.5 489 L284.5 506.5 L298.5 515 L306.5 517 L272.5 460 L272.5 458 L281.5 449 L264 428.5 L262.5 420.5 L252 409 L257.5 399.5 L256 396.5 L250 393.5 L212.5 338 L211 320 L218 310.5 L189 293.5 L189 279.5 L203 262 L203.5 256 L190 247 L192 239.5 L185 230.5 L182 222.5 L173 226 L164 226 L154 218.5 L142 213.5 L134.5 219 L125.5 220 L120 224 L105.5 224.5 L98 219.5 L93 218.5 L84 226.5 L71.5 230.5 L61.5 242.5Z"/></g>
+          <g class="im-county" tabindex="0" role="button" data-county="Columbia" aria-label="Columbia County, Georgia"><path d="M270.5 184.5 L247.5 200 L239.5 201 L233 205 L224.5 205.5 L215.5 210 L207 217.5 L194.5 217.5 L191.5 219 L191 224 L187.5 227.5 L195.5 239 L193.5 245.5 L207 255 L206 263.5 L192.5 280 L191.5 291.5 L222.5 308 L222 311.5 L214.5 320.5 L216 337.5 L248.5 382.5 L251.5 390 L259 395 L261 400.5 L255.5 407.5 L256 409.5 L266.5 420 L267.5 428 L281 444 L285.5 447 L449.5 308 L455 301 L448.5 293 L422.5 280.5 L408.5 267 L385 266.5 L340 225.5 L343.5 212.5 L339 210.5 L333.5 204.5 L332 199.5 L320.5 198.5 L312.5 192 L295.5 194 L288.5 189.5Z"/></g>
+          <g class="im-county" tabindex="0" role="button" data-county="Richmond" aria-label="Richmond County, Georgia"><path d="M584.5 523 L584 516 L567 505 L562.5 499 L557.5 501.5 L554 498.5 L550.5 484 L547 479.5 L535 478.5 L532 476 L533.5 465.5 L519.5 465 L516 462 L508 433.5 L512 430.5 L521 429 L509.5 403.5 L512.5 401 L526.5 399.5 L522.5 390 L530 381.5 L522 368 L492.5 350.5 L468.5 315.5 L458.5 305 L277.5 457.5 L277.5 460.5 L310.5 514 L366.5 492.5 L371.5 494.5 L379.5 505 L392 510 L400 531 L414.5 544.5 L425.5 545.5 L443 536 L459.5 544.5 L473.5 542.5 L496.5 548.5 L535.5 522.5 L543.5 525 L548.5 522 L561 522 L572 531Z"/></g>
+          <g class="im-county" tabindex="0" role="button" data-county="Burke" aria-label="Burke County, Georgia"><path d="M274 863 L280.5 866 L306 867 L315 873.5 L333 879 L339 884 L343 884 L360 877 L374.5 876 L380.5 873.5 L398.5 817.5 L421 797 L433 793.5 L511 788.5 L569.5 766.5 L580 766.5 L593 773 L602.5 774 L610.5 780 L623 783 L633 792 L637 798.5 L773 701.5 L769.5 693 L763.5 693 L745 681 L743.5 675.5 L737 680.5 L733 681 L731 679 L732 663.5 L713 662 L685.5 651.5 L654.5 629.5 L630.5 601.5 L630 587.5 L637 578 L630.5 566 L623.5 571.5 L606.5 569.5 L600.5 560 L571 537 L560.5 525.5 L549 525.5 L543.5 528.5 L536 526 L497 552 L474 546 L459.5 548 L443 539.5 L425.5 549 L414.5 548 L396.5 531.5 L388.5 511 L377.5 507.5 L371.5 499.5 L362 497 L309.5 519 L325 546.5 L326.5 559 L316.5 587.5 L304.5 613.5 L289.5 682 L302 782.5 L273.5 857Z"/></g>
+          <g class="im-county" tabindex="0" role="button" data-county="Aiken" aria-label="Aiken County, South Carolina"><path d="M769.5 34.5 L763 40 L761.5 46.5 L704 97 L691.5 101 L681 115 L682 119 L659 142 L654 142.5 L650.5 146 L650.5 151 L628 173.5 L623 174 L618.5 179 L612.5 181.5 L601.5 191.5 L601.5 195 L527 267 L524 267.5 L521 265.5 L513.5 268.5 L511.5 277.5 L506.5 283 L495 287.5 L478 305 L503.5 342 L530.5 357 L546.5 381 L546.5 385 L539.5 392.5 L545 401.5 L545 405.5 L539.5 412 L529 413.5 L540 438 L535.5 441 L525 442.5 L527.5 451 L547.5 452.5 L549.5 454.5 L548 465 L553 466 L563 477 L564.5 481.5 L568.5 479 L579.5 478.5 L587 483 L588 499.5 L586.5 501 L598 509.5 L598.5 530.5 L591.5 535.5 L610.5 550.5 L615.5 557 L619 557 L626.5 549 L638 553.5 L641.5 556.5 L648.5 569 L682 534.5 L690.5 531 L713 508 L720 505 L799.5 425.5 L815.5 418.5 L882 350.5 L890.5 347.5 L911.5 326 L923 321.5 L928 310.5 L965 275 L968 267 L976.5 258.5 L996.5 242.5 L999 236 L1021.5 212.5 L1010 208.5 L999 196.5 L986.5 193.5 L977.5 183 L971 180 L966.5 175 L953.5 175.5 L949 173.5 L942 166 L928 161.5 L916 160.5 L906.5 153 L887.5 152.5 L872 145.5 L865.5 137 L861 115.5 L855.5 113 L849.5 106.5 L846 97 L837.5 95.5 L831.5 91 L808.5 83 L793.5 66 L791 57Z"/></g>
+          <polyline class="im-map__river" points="155.3,0 160.5,9 194,36 212,48 244.9,66 257,75 275,93 292.5,114 314.1,135 322,147 348.7,198 350.9,207 351,222 356.7,231 373.6,246 388.4,255 431.9,276 454.1,291 471.5,309 496.3,342 523.5,363 529.7,369 534.8,378 534.5,390 524.8,414 525.8,429 520.5,444 522.8,450 545.4,471 565.4,486 570.8,492 576.5,501 587.3,513 590,519 586.4,531 586.5,537 587.8,540 590.9,543 627.4,564 640.2,576 642.2,579 638.9,591 639,597 643.7,606 651.2,615 663.8,627 681,639 724.5,657 736.3,663 754,678 793.1,702 805.9,714 814.1,729 817.6,741 811.2,765 813,777 828.8,804 833.5,822 844.8,846 849.2,852 861.3,864 864.4,870 865.1,903 869.8,924"/>
+          <text class="im-map__water" transform="translate(716 610) rotate(37)">Savannah River</text>
+          <g class="im-over" data-county="McDuffie" aria-hidden="true">
+            <text class="im-county__name" x="152" y="356">McDuffie</text>
+            <g class="im-town" data-town="Thomson" transform="translate(141.3 363.8)"><circle r="6"/><text x="0" y="36" text-anchor="middle">Thomson</text></g>
+          </g>
+          <g class="im-over" data-county="Columbia" aria-hidden="true">
+            <text class="im-county__name" x="292" y="250">Columbia</text>
+            <g class="im-town" data-town="Martinez" transform="translate(428.6 321.1)"><circle r="6"/><text x="0" y="36" text-anchor="middle">Martinez</text></g>
+            <g class="im-town" data-town="Grovetown" transform="translate(346.4 375.7)"><circle r="6"/><text x="-13" y="9" text-anchor="end">Grovetown</text></g>
+          </g>
+          <g class="im-over" data-county="Richmond" aria-hidden="true">
+            <text class="im-county__name" x="432" y="440">Richmond</text>
+            <g class="im-town" data-town="Augusta" transform="translate(496.1 354.4)"><circle r="6"/><text x="0" y="36" text-anchor="middle">Augusta</text></g>
+            <g class="im-town" data-town="Hephzibah" transform="translate(414.1 481.9)"><circle r="6"/><text x="13" y="9" text-anchor="start">Hephzibah</text></g>
+          </g>
+          <g class="im-over" data-county="Burke" aria-hidden="true">
+            <text class="im-county__name" x="512" y="752">Burke</text>
+            <g class="im-town" data-town="Waynesboro" transform="translate(467.9 658.2)"><circle r="6"/><text x="13" y="9" text-anchor="start">Waynesboro</text></g>
+          </g>
+          <g class="im-over" data-county="Aiken" aria-hidden="true">
+            <text class="im-county__name" x="822" y="372">Aiken</text>
+            <g class="im-town" data-town="North Augusta" transform="translate(502.7 331.9)"><circle r="6"/><text x="13" y="9" text-anchor="start">North Augusta</text></g>
+            <g class="im-town" data-town="Aiken" transform="translate(667.2 282.3)"><circle r="6"/><text x="13" y="9" text-anchor="start">Aiken</text></g>
+          </g>
+          <g class="im-office" transform="translate(391.8 309)" aria-hidden="true"><circle class="im-office__ring" r="10"/><circle class="im-office__dot" r="10"/><text class="im-office__tag" y="-22" text-anchor="middle">Evans office</text></g>
+        </svg>
+        <p class="im-map__legend" aria-live="polite"><b>Five counties</b><span>Point at one to see its towns.</span></p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="im im-faq" id="questions" aria-labelledby="questions-h">
+    <div class="wrap im-g im-faq__grid">
+      <div data-reveal>
+        <h2 class="im-h2" id="questions-h">Questions</h2>
+      </div>
+      <div class="im-qa" data-reveal style="--d:1">
+        <details open><summary>Do you work with my insurance company?</summary><p>Yes. We work with all insurance providers, and we handle the documentation and the calls with your adjuster.</p></details>
+        <details><summary>How fast can someone come out?</summary><p>The Evans office is open 24 hours a day, every day. For an emergency, call. A message through the form gets a reply within one business day.</p></details>
+        <details><summary>Do you rebuild, or only clean up?</summary><p>Both. Southeast Restoration is a licensed general contractor, so one company handles the cleanup, the repairs and full reconstruction.</p></details>
+        <details><summary>Is the work guaranteed?</summary><p>Yes. Our work comes with warranties, and the company is fully insured.</p></details>
+        <details><summary>Do you take commercial jobs?</summary><p>Yes: offices and retail, churches, schools, healthcare and senior care buildings, and industrial sites.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST. Preview: data-preview keeps the form from sending and says so. At launch, remove it and give the form its address (data-endpoint). -->
+  <section class="im im-request" id="request" aria-labelledby="request-h">
+    <div class="wrap im-g im-request__grid">
+      <div data-reveal>
+        <p class="im-eyebrow">Not an emergency</p>
+        <h2 class="im-h2" id="request-h">Request an inspection</h2>
+        <p class="im-lead">Send the details and we reply within one business day. If water is on the floor right now, call.</p>
+        <a class="im-bigtel" href="tel:+17064321000">(706) 432-1000</a>
+        <p>The Evans office, at any hour.</p>
+      </div>
+      <article class="card" data-reveal style="--d:1">
+        <form class="form" action="mailto:augusta@southeastrestoration.example" method="post" enctype="text/plain" data-endpoint="" data-sent="Your inspection request is in. We reply within one business day." data-preview="This is a design preview, so the form is not connected yet. To reach Southeast Restoration now, call (706)&nbsp;432&#8209;1000." novalidate>
+          <div class="field"><label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field__error" id="f-name-err" hidden>Write your first and last name.</p></div>
+          <div class="field"><label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-err">
+            <p class="field__error" id="f-phone-err" hidden>Write a phone number we can reach you on.</p></div>
+          <div class="field field--full"><label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+            <p class="field__error" id="f-email-err" hidden>Write an email address with an @, like name@example.com.</p></div>
+          <div class="field field--full"><label for="f-address">Property address</label>
+            <input id="f-address" name="address" type="text" autocomplete="street-address" required aria-describedby="f-address-err">
+            <p class="field__error" id="f-address-err" hidden>Write the street and town of the damaged property.</p></div>
+          <div class="field field--full"><label for="f-what">What happened</label>
+            <textarea id="f-what" name="what-happened" rows="3" required aria-describedby="f-what-err"></textarea>
+            <p class="field__error" id="f-what-err" hidden>Write a line or two about the damage and when it started.</p></div>
+          <div class="btn-row"><button class="btn btn--secondary btn--ink" type="submit">Send the request</button></div>
+          <p class="form__status" role="status" data-form-status></p>
+          <p class="t-small muted">We reply within one business day.</p>
+        </form>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- THE CLOSE: morning. The whole company, the one action, the footer -->
+<footer class="im-close" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="im-close__top">
+      <div data-reveal>
+        <p class="im-eyebrow">Open 24 hours, every day</p>
+        <h2 class="im-h2" id="close-h">Call the Evans office, day or night</h2>
+      </div>
+      <span class="im-magnet" data-reveal style="--d:1"><a class="btn btn--primary im-xl" href="tel:+17064321000">Call (706) 432-1000</a></span>
+    </div>
+    <div class="im-close__photo" data-reveal><img src="assets/img/close-team.webp" alt="The Southeast Restoration team standing in front of two company trucks" width="1400" height="530" loading="lazy" decoding="async" data-source="client" data-subject="the team"></div>
+    <div class="im-foot">
+      <div class="im-foot__grid">
+        <div>
+          <a class="nav__logo" href="#top"><img src="assets/img/emblem.png" alt="" width="68" height="26">Southeast Restoration</a>
+          <p class="im-foot__lede">Water, fire, storm and mold repairs in Augusta.</p>
+        </div>
+        <div><h3>Services</h3><ul><li><a href="#triage">What happened?</a></li><li><a href="#process">How a repair goes</a></li></ul></div>
+        <div><h3>Company</h3><ul><li><a href="#reviews">Reviews</a></li><li><a href="#films">Films</a></li><li><a href="#company">Since 1999</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="#areas">Service area</a></li><li><a href="#questions">Questions</a></li><li><a href="#request">Inspection form</a></li></ul></div>
+      </div>
+      <div class="im-foot__legal">
+        <span>&copy; 2026 Southeast Restoration</span>
+        <a href="https://www.southeastrestoration.com/privacy-policy/">Privacy</a>
+        <span>Concept preview, not the company's live site</span>
+        <span>529 Grand Slam Drive, Evans, GA 30809</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ACTION BAR: the phone's foot, the main action -->
+<nav class="actionbar" aria-label="Quick actions">
+  <a class="btn btn--primary" href="tel:+17064321000">Call (706) 432-1000</a>
+</nav>
+
+<!-- the film player -->
+<template id="sc-tpl"><svg class="sc" viewBox="0 0 720 594" preserveAspectRatio="xMidYMid slice" data-s="0" aria-hidden="true" focusable="false"><defs><linearGradient id="sc-sky" x1="0" y1="0" x2="0" y2="1"><stop class="sc-sa" offset="0"/><stop class="sc-sb" offset=".74"/></linearGradient><linearGradient id="sc-beamg" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#ffe7b0" stop-opacity=".6"/><stop offset="1" stop-color="#ffe7b0" stop-opacity="0"/></linearGradient><radialGradient id="sc-lamp"><stop offset="0" stop-color="#ffd27d" stop-opacity=".9"/><stop offset=".45" stop-color="#ffc56a" stop-opacity=".34"/><stop offset="1" stop-color="#ffc56a" stop-opacity="0"/></radialGradient><radialGradient id="sc-halo"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><radialGradient id="sc-sunhalo"><stop offset="0" stop-color="#ffd387" stop-opacity=".8"/><stop offset="1" stop-color="#ffd387" stop-opacity="0"/></radialGradient><radialGradient id="sc-fireglow" cx=".62" cy=".92" r=".95"><stop offset="0" stop-color="#ff8a3c" stop-opacity=".85"/><stop offset="1" stop-color="#ff8a3c" stop-opacity="0"/></radialGradient><pattern id="sc-rainp" width="90" height="120" patternUnits="userSpaceOnUse" patternTransform="skewX(-12)"><path d="M10 4v22M38 50v26M64 18v18M82 84v24M24 92v16M54 104v12" fill="none" stroke="#cfe0ff" stroke-width="1.5" stroke-linecap="round"/></pattern><radialGradient id="sc-vigg" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#03070e" stop-opacity="0"/><stop offset="1" stop-color="#03070e" stop-opacity=".6"/></radialGradient><clipPath id="sc-croof"><path d="M96 240L150 136H446L500 240z"/></clipPath><clipPath id="sc-cl"><rect x="126" y="254" width="168" height="164"/></clipPath><clipPath id="sc-cr"><rect x="302" y="254" width="168" height="164"/></clipPath><clipPath id="sc-cbox"><rect x="548" y="444" width="156" height="78" rx="4"/></clipPath></defs><rect x="-40" y="-40" width="800" height="680" fill="url(#sc-sky)"/><rect class="sc-flash" x="-40" y="-40" width="800" height="500"/><g class="sc-sun"><circle cx="58" cy="316" r="96" fill="url(#sc-sunhalo)"/><circle class="sc-sund" cx="58" cy="316" r="24"/></g><g class="sc-moon"><circle cx="236" cy="70" r="52" fill="url(#sc-halo)"/><circle class="sc-moond" cx="236" cy="70" r="18"/></g><g class="sc-clouds"><g class="sc-c1"><path class="sc-cloud" transform="translate(126 -4)" d="M70 96q-22 0-22-18 0-18 22-18 6-22 32-22 24 0 32 18 8-8 22-8 24 0 26 22 22 2 22 14 0 12-18 12z"/></g><g class="sc-c2"><path class="sc-cloud" transform="translate(-44 42) scale(.7)" d="M70 96q-22 0-22-18 0-18 22-18 6-22 32-22 24 0 32 18 8-8 22-8 24 0 26 22 22 2 22 14 0 12-18 12z"/></g><g class="sc-c3"><path class="sc-cloud" transform="translate(356 8) scale(.9)" d="M70 96q-22 0-22-18 0-18 22-18 6-22 32-22 24 0 32 18 8-8 22-8 24 0 26 22 22 2 22 14 0 12-18 12z"/></g></g><path class="sc-far2" d="M-40 444V352q16-34 34 0 12-40 28 0 18-28 38 0 14-44 30 0 20-30 42 0 16-40 34 0 22-28 46 0 14-42 30 0 20-30 42 0 16-44 34 0 22-28 46 0 14-40 30 0 20-30 42 0 16-42 34 0 22-28 46 0 14-44 30 0 20-30 42 0 16-40 34 0 22-28 46 0 20-36 40 0 22-34 46 0 10-20 20 0V444z"/><path class="sc-far" d="M-40 448V372q20-30 42 0 14-46 30 0 22-26 46 0 12-38 26 0 20-32 44 0 16-48 34 0 22-26 44 0 14-40 30 0 24-30 50 0 16-44 34 0 20-28 42 0 14-40 30 0 22-30 46 0 16-46 34 0 20-26 42 0 14-42 30 0 24-30 50 0 16-44 34 0 22-28 46 0 14-38 30 0 20-30 44 0V448z"/><path class="sc-lawn" d="M-40 440Q200 424 380 430T760 436V610H-40z"/><rect class="sc-road" x="-40" y="508" width="800" height="110"/><rect class="sc-curb" x="-40" y="505" width="800" height="3"/><path class="sc-dash" d="M-28 566H760"/><rect class="sc-rain" x="-130" y="-170" width="1000" height="920" fill="url(#sc-rainp)"/><g class="sc-tree"><path class="sc-trunk" d="M590 438C593 380 596 322 598 240L600 190H610L612 240C612 322 614 380 618 438z"/><path class="sc-branch" stroke-width="7" d="M604 252C596 234 584 224 570 216M606 246C616 230 630 220 644 212"/><path class="sc-wood sc-break" d="M599 276l-15-8 8-5-11-9 18 3z"/><ellipse class="sc-wood sc-cutface" cx="597" cy="266" rx="3.2" ry="7"/><g class="sc-canopy"><circle class="sc-leaf" cx="604" cy="148" r="64"/><circle class="sc-leaf" cx="560" cy="188" r="46"/><circle class="sc-leaf" cx="650" cy="186" r="48"/><circle class="sc-leaf" cx="612" cy="104" r="42"/><circle class="sc-leaf2" cx="592" cy="128" r="36"/><circle class="sc-leaf2" cx="640" cy="162" r="26"/><circle class="sc-leaf2" cx="566" cy="178" r="20"/></g></g><g class="sc-house"><path class="sc-roof" d="M96 240L150 136H446L500 240z"/><g clip-path="url(#sc-croof)"><path class="sc-shingle" d="M90 160H506M90 182H506M90 204H506M90 224H506"/><g class="sc-patch"><path class="sc-roofnew" d="M358 160H438V182H446V204H440V224H362V204H350V182H358z"/><path class="sc-shingle2" d="M358 160H438M350 182H446M350 204H446M362 224H440M378 160V182M398 160V182M418 160V182M370 182V204M390 182V204M410 182V204M430 182V204M382 204V224M402 204V224M422 204V224"/></g></g><path class="sc-ridge" d="M149 136H447"/><path class="sc-shade" d="M204 150V198H240z"/><rect class="sc-chim" x="172" y="106" width="32" height="92"/><rect class="sc-chimcap" x="167" y="100" width="42" height="8" rx="2"/><g class="sc-smoke"><circle cx="188" cy="90" r="8"/><circle cx="192" cy="88" r="10"/><circle cx="186" cy="92" r="9"/></g><g class="sc-hole"><path class="sc-dark" d="M364 180l14-10 13 7 12-11 17 9 9 16-11 14-16 8-15-6-15 4-10-14z"/><path class="sc-rafter" d="M374 200l42-24M384 207l36-20"/></g><g class="sc-debris"><rect class="sc-roofnew" x="338" y="214" width="14" height="6" transform="rotate(-18 345 217)"/><rect class="sc-roofnew" x="432" y="210" width="13" height="6" transform="rotate(24 438 213)"/><rect class="sc-roofnew" x="350" y="158" width="12" height="6" transform="rotate(12 356 161)"/></g><g class="sc-tarp"><path class="sc-tarpf" d="M342 131L450 129Q453 182 459 229Q443 234 430 229Q412 235 394 230Q374 235 351 231Q345 182 342 131z"/><path class="sc-tarpl" d="M360 140Q366 186 362 226M402 134Q394 180 404 228M436 136Q444 180 440 226"/><path class="sc-tarph" d="M348 137H446"/><path class="sc-rope" d="M356 225L352 240M406 225V240M453 223L458 240"/><g class="sc-grom"><circle cx="356" cy="225" r="1.8"/><circle cx="381" cy="227" r="1.8"/><circle cx="406" cy="225" r="1.8"/><circle cx="431" cy="225" r="1.8"/><circle cx="453" cy="223" r="1.8"/></g></g><rect class="sc-fascia" x="92" y="238" width="412" height="8" rx="2"/><rect class="sc-shell" x="118" y="246" width="360" height="192"/><rect class="sc-rl" x="126" y="254" width="168" height="164"/><rect class="sc-basel" x="126" y="412" width="168" height="6"/><rect class="sc-winf" x="152" y="282" width="54" height="56" rx="2"/><rect class="sc-glass" x="156" y="286" width="46" height="48"/><path class="sc-mull" d="M179 286V334M156 310H202"/><path class="sc-rod" d="M140 275H218"/><rect class="sc-curtain" x="143" y="276" width="12" height="70" rx="3"/><rect class="sc-curtain" x="203" y="276" width="12" height="70" rx="3"/><rect class="sc-artf" x="228" y="284" width="26" height="32" rx="1.5"/><rect class="sc-arti" x="231" y="287" width="20" height="26"/><circle class="sc-artc" cx="241" cy="302" r="5"/><rect class="sc-sofa2" x="146" y="356" width="98" height="40" rx="9"/><rect class="sc-sofa" x="138" y="380" width="114" height="30" rx="9"/><path class="sc-seam" d="M195 383V408"/><rect class="sc-pillow" x="154" y="364" width="22" height="20" rx="6"/><path class="sc-leg" d="M150 410v8M240 410v8"/><path class="sc-pole" d="M272 416V338"/><rect class="sc-poleb" x="263" y="414" width="18" height="4" rx="2"/><path class="sc-lshade" d="M259 338L264 314H280L285 338z"/><circle class="sc-glow" cx="272" cy="330" r="100" fill="url(#sc-lamp)" clip-path="url(#sc-cl)"/><rect class="sc-rr" x="302" y="254" width="168" height="164"/><path class="sc-stain" d="M336 254H450C448 268 440 272 438 284 436 296 428 296 426 286 424 278 418 280 416 292 414 312 404 322 400 306 397 296 392 296 390 304 388 320 380 320 378 302 376 288 368 286 364 276 360 268 340 268 336 254z"/><g class="sc-cut"><rect class="sc-cavity" x="302" y="366" width="168" height="52"/><path class="sc-stud" d="M314 366V412M342 366V412M370 366V412M398 366V412M426 366V412M454 366V412"/><rect class="sc-plate" x="302" y="410" width="168" height="8"/></g><rect class="sc-paint" x="302" y="254" width="168" height="164"/><path class="sc-dark sc-gap" d="M366 246l6 11 10-5 10 7 10-8 8 6 6-11z"/><rect class="sc-baser" x="302" y="412" width="168" height="6"/><g class="sc-old"><g class="sc-oldu"><rect class="sc-cab" x="420" y="282" width="46" height="46" rx="2"/><path class="sc-cabl" d="M443 285V325"/><path class="sc-knob" d="M438 311v6M448 311v6"/></g><g class="sc-oldb"><rect class="sc-toe" x="344" y="410" width="118" height="8"/><rect class="sc-cab" x="340" y="372" width="126" height="40"/><path class="sc-cabl" d="M382 375V409M424 375V409"/><path class="sc-knob" d="M376 384v6M388 384v6M430 384v6"/><rect class="sc-counter" x="336" y="366" width="134" height="7" rx="2"/></g></g><g class="sc-new"><g class="sc-newu"><rect class="sc-ncab" x="420" y="282" width="46" height="46" rx="2"/><path class="sc-ncabl" d="M443 285V325"/><path class="sc-nknob" d="M438 311v6M448 311v6"/></g><g class="sc-newb"><rect class="sc-ntoe" x="344" y="410" width="118" height="8"/><rect class="sc-ncab" x="340" y="372" width="126" height="40"/><path class="sc-ncabl" d="M382 375V409M424 375V409"/><path class="sc-nknob" d="M376 384v6M388 384v6M430 384v6"/><rect class="sc-ncounter" x="336" y="366" width="134" height="7" rx="2"/></g><g class="sc-plant"><ellipse class="sc-leaf" cx="353" cy="344" rx="4" ry="11" transform="rotate(-26 353 344)"/><ellipse class="sc-leaf" cx="365" cy="344" rx="4" ry="11" transform="rotate(26 365 344)"/><ellipse class="sc-leaf2" cx="359" cy="340" rx="4" ry="12"/><path class="sc-pot" d="M351 366l2-13h12l2 13z"/></g><g class="sc-pend"><path class="sc-pole" d="M392 254V290"/><path class="sc-pendsh" d="M381 300a11 11 0 0 1 22 0z"/></g><g class="sc-kit"><rect class="sc-can" x="308" y="404" width="13" height="14" rx="1.5"/><path class="sc-canh" d="M309 404a5.5 6 0 0 1 11 0"/><path class="sc-rollh" d="M327 418L331 392"/><rect class="sc-roll" x="322" y="383" width="19" height="8" rx="4" transform="rotate(8 331 387)"/></g></g><path class="sc-drip" d="M380 258V394M392 262V394M405 258V394"/><g clip-path="url(#sc-cr)"><g class="sc-pool"><rect class="sc-water" x="302" y="392" width="168" height="26"/><path class="sc-wave" d="M288 392q7-5 14 0t14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0 14 0"/></g></g><g class="sc-pump"><rect class="sc-gear" x="308" y="401" width="24" height="15" rx="3"/><path class="sc-gline" d="M313 407h9"/><circle class="sc-gdark" cx="314" cy="417" r="3"/><circle class="sc-gdark" cx="326" cy="417" r="3"/></g><path class="sc-hose" d="M332 411H458C480 411 490 424 498 440S524 492 556 500"/><path class="sc-hosef" d="M332 411H458C480 411 490 424 498 440S524 492 556 500"/><g class="sc-dry"><g transform="translate(326 404)"><rect class="sc-gear" x="0" y="2" width="27" height="12" rx="3"/><circle class="sc-gear" r="13"/><circle class="sc-gdark" r="7.5"/><path class="sc-fan" d="M0-5.5V5.5M-4.8-2.75L4.8 2.75M-4.8 2.75L4.8-2.75"/><path class="sc-ghand" d="M-7-12.5q7-7 14 0"/></g><g transform="translate(450 404) scale(-1 1)"><rect class="sc-gear" x="0" y="2" width="27" height="12" rx="3"/><circle class="sc-gear" r="13"/><circle class="sc-gdark" r="7.5"/><path class="sc-fan" d="M0-5.5V5.5M-4.8-2.75L4.8 2.75M-4.8 2.75L4.8-2.75"/><path class="sc-ghand" d="M-7-12.5q7-7 14 0"/></g><rect class="sc-gear2" x="376" y="374" width="26" height="40" rx="4"/><path class="sc-gline2" d="M381 382h16M381 388h16M381 394h16"/><circle class="sc-led" cx="389" cy="404" r="2.2"/><circle class="sc-gdark" cx="381" cy="416" r="2.6"/><circle class="sc-gdark" cx="397" cy="416" r="2.6"/><path class="sc-air" d="M354 408C378 400 392 378 396 346M352 397C370 386 378 364 380 334M422 408C404 400 398 380 404 348M426 397C416 384 414 362 420 338"/></g><g class="sc-fire"><rect x="302" y="254" width="168" height="164" fill="url(#sc-fireglow)"/><g class="sc-smk"><ellipse cx="360" cy="268" rx="44" ry="12"/><ellipse cx="424" cy="264" rx="42" ry="13"/><ellipse cx="392" cy="282" rx="30" ry="9"/></g><g transform="translate(366 372) scale(1.25)"><path class="sc-f1 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(412 372) scale(1.6)"><path class="sc-f1 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(450 372) scale(1.1)"><path class="sc-f1 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(367 372) scale(.8)"><path class="sc-f2 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(413 372) scale(1.05)"><path class="sc-f2 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(450 372) scale(.7)"><path class="sc-f2 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g><g transform="translate(414 372) scale(.55)"><path class="sc-f3 sc-flick" d="M0 0C-16-6-20-26-6-42-5-32 2-30 5-38 8-47 4-53 1-60 20-48 24-24 15-8 12-2 6 0 0 0z"/></g></g><rect class="sc-floor" x="118" y="418" width="360" height="5"/><rect class="sc-shadow" x="112" y="436" width="372" height="5" rx="2.5"/></g><g class="sc-ladder"><path d="M516 438L492 244M528 438L504 244M513 413h12M510 390h12M507 367h12M505 344h12M502 321h12M499 298h12M496 275h12M493 252h12"/></g><g class="sc-limb"><path class="sc-branch" stroke-width="9" d="M598 264C562 252 520 232 476 214S420 198 394 196"/><path class="sc-branch" stroke-width="5" d="M464 210C458 192 450 178 440 166"/><path class="sc-branch" stroke-width="4" d="M442 204C438 213 432 219 425 223"/><path class="sc-branch" stroke-width="4" d="M412 198C398 182 382 170 366 162"/><circle class="sc-leaf" cx="350" cy="184" r="15"/><circle class="sc-leaf" cx="364" cy="160" r="13"/><circle class="sc-leaf" cx="440" cy="164" r="13"/><circle class="sc-leaf" cx="458" cy="198" r="13"/><circle class="sc-leaf" cx="424" cy="224" r="12"/><circle class="sc-leaf" cx="480" cy="208" r="11"/><circle class="sc-leaf" cx="344" cy="203" r="11"/><circle class="sc-leaf" cx="452" cy="180" r="11"/><circle class="sc-leaf" cx="472" cy="189" r="9"/><circle class="sc-leaf" cx="437" cy="217" r="10"/><circle class="sc-leaf" cx="379" cy="155" r="10"/><circle class="sc-leaf2" cx="356" cy="172" r="8"/><circle class="sc-leaf2" cx="446" cy="172" r="7"/><circle class="sc-leaf2" cx="430" cy="218" r="6"/><circle class="sc-leaf2" cx="372" cy="152" r="5"/><circle class="sc-leaf2" cx="466" cy="200" r="5"/></g><g class="sc-bush"><circle cx="100" cy="428" r="13"/><circle cx="116" cy="421" r="15"/><circle cx="133" cy="429" r="11"/></g><g class="sc-logs"><circle class="sc-log" cx="634" cy="429" r="8"/><circle class="sc-log" cx="650" cy="429" r="8"/><circle class="sc-log" cx="642" cy="415" r="8"/><circle class="sc-logi" cx="634" cy="429" r="3.5"/><circle class="sc-logi" cx="650" cy="429" r="3.5"/><circle class="sc-logi" cx="642" cy="415" r="3.5"/></g><g class="sc-fore"><g class="sc-truck"><polygon class="sc-beam" points="500,502 500,514 190,568 190,470" fill="url(#sc-beamg)"/><ellipse class="sc-shadow" cx="606" cy="546" rx="106" ry="5"/><rect class="sc-chassis" x="508" y="518" width="194" height="10" rx="2"/><rect class="sc-box" x="548" y="444" width="156" height="78" rx="4"/><g clip-path="url(#sc-cbox)"><path class="sc-livery" d="M566 522C614 514 656 484 700 444H704V522z"/><path class="sc-swoosh" d="M558 523C608 514 652 484 698 443"/><path class="sc-swoosh" d="M692 452C696 476 688 498 668 507 652 514 640 507 643 499 646 491 664 494 678 501 688 506 698 506 706 504"/></g><text class="sc-brand" x="558" y="467">SOUTHEAST</text><text class="sc-brand2" x="559" y="478">RESTORATION</text><path class="sc-cabt" d="M548 468H524Q514 468 510 478L503 496Q500 502 500 508V522H548z"/><path class="sc-glasst" d="M543 475H526Q520 475 517 482L512 495H543z"/><path class="sc-doorl" d="M546 470V520"/><rect class="sc-bumper" x="496" y="515" width="14" height="8" rx="2"/><rect class="sc-lightt" x="500" y="503" width="5" height="9" rx="2"/><circle class="sc-hl" cx="500" cy="507" r="13" fill="url(#sc-halo)"/><circle class="sc-tire" cx="532" cy="532" r="13"/><circle class="sc-hub" cx="532" cy="532" r="5"/><circle class="sc-tire" cx="668" cy="532" r="13"/><circle class="sc-hub" cx="668" cy="532" r="5"/></g></g><rect class="sc-vig" x="-40" y="-40" width="800" height="680" fill="url(#sc-vigg)"/></svg></template>
+<div class="im-lightbox" role="dialog" aria-modal="true" aria-label="Film player" hidden>
+  <button class="im-lightbox__close" type="button">Close the film</button>
+  <div class="im-lightbox__frame"></div>
+</div>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="site.js"></script>
+</body>
+</html>
