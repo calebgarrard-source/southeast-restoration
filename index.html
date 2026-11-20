@@ -23,7 +23,7 @@
 <meta name="page-type" content="service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-full.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
@@ -35,13 +35,13 @@
   --p-inv-bg: #0f1e31; --p-inv-surface: #1c2b3d; --p-inv-ink: #f8fafc; --p-inv-muted: #969fa9;
   --p-inv-accent: #f8fafc; --p-inv-accent-ink: #0f1e31; --p-inv-action: #f8fafc; --p-inv-action-ink: #0f1e31;
   --font-display: "Newsreader", Georgia, serif;
-  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --font-text: "Barlow", system-ui, sans-serif;
   --display-weight: 400;
   --display-tracking: -0.018em;
   --display-tracking-xl: -0.025em;
 }
 </style>
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=2">
 <script>document.documentElement.classList.add('im-js')</script>
 </head>
 <body>
@@ -352,34 +352,35 @@
         </ul>
       </div>
       <div data-reveal style="--d:1">
-        <ul class="im-deck" aria-label="The company's five house rules">
-          <li class="im-card im-card--navy" tabindex="0" data-note="Every place we work is left in better shape than we found it.">
-            <span class="im-card__n">01</span>
+        <h3 class="im-deck__title" id="rules-h">The company's five house rules</h3>
+        <!-- a stack of five cards: every title shows, and the card in hand opens to its line. With no script, all five stand open -->
+        <ul class="im-deck" aria-labelledby="rules-h">
+          <li class="im-card im-card--navy">
+            <button class="im-card__head" type="button" aria-expanded="true" aria-controls="rule-1"><span class="im-card__n">01</span><strong>Leave it better than you found it</strong></button>
+            <div class="im-card__more" id="rule-1"><div><p>Every place we work is left in better shape than we found it.</p></div></div>
             <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24 24 9l17 15"/><path d="M12 20v19h24V20"/><path d="M20 39V28h8v11"/></svg>
-            <strong>Leave it better than you found it</strong>
           </li>
-          <li class="im-card im-card--peri" tabindex="0" data-note="The work is for people on one of their hardest days.">
-            <span class="im-card__n">02</span>
+          <li class="im-card im-card--peri">
+            <button class="im-card__head" type="button" aria-expanded="true" aria-controls="rule-2"><span class="im-card__n">02</span><strong>Serve with compassion</strong></button>
+            <div class="im-card__more" id="rule-2"><div><p>The work is for people on one of their hardest days.</p></div></div>
             <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="6"/><path d="M7 26c2 9 8 14 17 14s15-5 17-14"/></svg>
-            <strong>Serve with compassion</strong>
           </li>
-          <li class="im-card im-card--paper" tabindex="0" data-note="Colossians 3:23, the verse the company works by.">
-            <span class="im-card__n">03</span>
-            <span class="im-card__big" aria-hidden="true">3:23</span>
-            <strong>Colossians 3:23</strong>
+          <li class="im-card im-card--paper">
+            <button class="im-card__head" type="button" aria-expanded="true" aria-controls="rule-3"><span class="im-card__n">03</span><strong>Colossians 3:23</strong></button>
+            <div class="im-card__more" id="rule-3"><div><p>Colossians 3:23, the verse the company works by.</p></div></div>
+            <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 14c-4-3-9-4-16-4v26c7 0 12 1 16 4 4-3 9-4 16-4V10c-7 0-12 1-16 4z"/><path d="M24 14v26"/></svg>
           </li>
-          <li class="im-card im-card--dawn" tabindex="0" data-note="Trucks, tools and your floors: kept clean, every day.">
-            <span class="im-card__n">04</span>
+          <li class="im-card im-card--dawn">
+            <button class="im-card__head" type="button" aria-expanded="true" aria-controls="rule-4"><span class="im-card__n">04</span><strong>Everything clean, always</strong></button>
+            <div class="im-card__more" id="rule-4"><div><p>Trucks, tools and your floors: kept clean, every day.</p></div></div>
             <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="3"/><path d="M15 33 33 15"/><path d="M24 35l11-11"/></svg>
-            <strong>Everything clean, always</strong>
           </li>
-          <li class="im-card im-card--storm" tabindex="0" data-note="A crew that likes the work does it better.">
-            <span class="im-card__n">05</span>
+          <li class="im-card im-card--storm">
+            <button class="im-card__head" type="button" aria-expanded="true" aria-controls="rule-5"><span class="im-card__n">05</span><strong>Make it fun</strong></button>
+            <div class="im-card__more" id="rule-5"><div><p>A crew that likes the work does it better.</p></div></div>
             <svg class="im-card__g" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M16 28c2 4 4.500 6 8 6s6-2 8-6"/><path d="M18 19v2M30 19v2"/></svg>
-            <strong>Make it fun</strong>
           </li>
         </ul>
-        <p class="im-deck__note" aria-live="polite">The company's five house rules.</p>
       </div>
     </div>
   </section>
@@ -540,6 +541,6 @@
 
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="site.js"></script>
+<script type="module" src="site.js?v=2"></script>
 </body>
 </html>

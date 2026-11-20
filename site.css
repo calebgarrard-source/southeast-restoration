@@ -59,6 +59,10 @@ html:not(.im-js) .im-curtain { display: none; }
 .nav { transition: background-color .4s var(--im-ease), color .4s var(--im-ease), border-color .4s var(--im-ease); }
 html[data-nav="dark"] .nav:not(.is-open) { --bg: transparent; --ink: #f3f6fb; --muted: #a3b3ca; --line: transparent; --line-strong: rgba(243, 246, 251, .34);
   background: linear-gradient(180deg, rgba(6, 11, 20, .78), rgba(6, 11, 20, 0)); border-bottom-color: transparent; }
+/* once the page has moved, the bar stands on a solid ground: nothing on the page reads through it */
+html[data-nav="dark"][data-nav-at="scroll"] .nav:not(.is-open) { background-color: var(--im-deep); border-bottom-color: rgba(243, 246, 251, .12); }
+/* with no script the bar cannot learn what is under it, so it stays at the top of the page and scrolls away with it */
+html:not(.im-js) .nav { position: absolute; }
 html[data-nav="dark"] .nav:not(.is-open) .nav__menu { --bg: var(--im-deep); --line: rgba(243, 246, 251, .14); background: var(--im-deep); }
 html[data-nav="dark"] .nav:not(.is-open) .nav__toggle { background: rgba(243, 246, 251, .1); border-color: transparent; color: #f3f6fb; }
 .nav__logo img { height: 26px; }
@@ -259,22 +263,32 @@ main > section.im-values.im { background: var(--im-mist); overflow: clip; }
 .im-values__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .im-values .rows { margin-top: var(--s-7); }
 .im-values .rows > li { border-bottom-color: rgba(15, 30, 49, .16); }
-/* the five house rules, redrawn as cards in the site's own type and colours (the words are the company's) */
-.im-deck { position: relative; display: flex; justify-content: center; align-items: center; min-height: clamp(320px, 30vw, 420px); margin: 0; padding: 0 16px; list-style: none; }
-.im-card { position: relative; flex: 0 0 auto; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 12px; width: clamp(150px, 15.5vw, 224px); aspect-ratio: 4 / 5; padding: clamp(16px, 1.5vw, 24px);
-  margin-left: clamp(-104px, -7.2vw, -60px); border-radius: 16px; cursor: pointer; background: var(--cb); color: var(--cc);
-  box-shadow: 0 18px 40px -18px rgba(15, 30, 49, .5); transform: rotate(var(--r, 0deg)) translateY(var(--y, 0px)); transition: transform .6s var(--im-ease), box-shadow .6s var(--im-ease); }
-.im-card:first-child { margin-left: 0; }
-.im-card:nth-child(1) { --r: -9deg; --y: 22px; } .im-card:nth-child(2) { --r: -4deg; --y: 4px; } .im-card:nth-child(3) { --r: 0deg; --y: -6px; }
-.im-card:nth-child(4) { --r: 5deg; --y: 6px; } .im-card:nth-child(5) { --r: 10deg; --y: 26px; }
-.im-card:hover, .im-card:focus-visible, .im-card.is-up { z-index: 3; transform: rotate(0deg) translateY(-26px) scale(1.06); box-shadow: 0 34px 60px -22px rgba(15, 30, 49, .62); }
+/* the five house rules, redrawn as a stack of cards in the site's own type and colours (the words are the company's):
+   every title shows at rest, and the card in hand opens to its line */
+.im-deck__title { margin: 0 0 var(--s-5); font: 400 clamp(22px, 2vw, 28px)/1.15 var(--font-display); letter-spacing: -.02em; }
+.im-deck { display: grid; margin: 0; padding: 0; list-style: none; isolation: isolate; filter: drop-shadow(0 22px 26px rgba(15, 30, 49, .16)); }
+.im-card { position: relative; padding-bottom: 16px; border-radius: 16px; background: var(--cb); color: var(--cc); }
+.im-card + .im-card { margin-top: -16px; box-shadow: 0 -10px 22px -14px rgba(15, 30, 49, .55); }   /* each card tucks over the empty foot of the one before it */
+.im-card:last-child { padding-bottom: 0; }
+.im-card__head { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 12px 92px 12px 20px;
+  border: 0; border-radius: 16px; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.im-card__head:focus-visible { outline: 2px solid currentColor; outline-offset: -5px; }
+.im-card__more { display: grid; grid-template-rows: 1fr; }
+.im-card__more > div { min-height: 0; overflow: hidden; }
+.im-card__more p { margin: 0; max-width: none; min-height: var(--note-h, 0px); padding: 0 108px 20px 60px; font-size: 16px; line-height: 1.5; color: inherit; }
+/* with the script running, only the card in hand stands open */
+.im-deck.is-live .im-card__more { transition: grid-template-rows .6s var(--im-ease), visibility 0s; }
+.im-deck.is-live .im-card:not(.is-up) .im-card__more { grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .6s var(--im-ease), visibility 0s linear .6s; }
+.im-deck.is-live .im-card:not(.is-up) .im-card__g { transform: none; }
+.im-deck.is-setting .im-card__more, .im-deck.is-setting .im-card__g { transition: none !important; }
 .im-card--navy { --cb: #0f1e31; --cc: #f3f6fb; } .im-card--peri { --cb: #8ca9d9; --cc: #0f1e31; } .im-card--paper { --cb: #ffffff; --cc: #0f1e31; }
 .im-card--dawn { --cb: #f3d9bd; --cc: #0f1e31; } .im-card--storm { --cb: #27405f; --cc: #f3f6fb; }
-.im-card__n { font: 500 13px/1 var(--font-text); font-variant-numeric: tabular-nums; opacity: .92; }
-.im-card__g { align-self: center; width: clamp(36px, 3.4vw, 48px); height: auto; aspect-ratio: 1; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.im-card__big { align-self: center; font: 400 clamp(44px, 4.8vw, 72px)/.9 var(--font-display); letter-spacing: -.04em; font-variant-numeric: lining-nums; }
-.im-card strong { font: 400 clamp(18px, 1.75vw, 25px)/1.1 var(--font-display); letter-spacing: -.02em; text-wrap: balance; }
-.im-deck__note { margin: var(--s-5) 0 0; text-align: center; font-size: 15px; color: #445168; min-height: 1.5em; }
+.im-card__n { font: 500 13px/1 var(--font-text); font-variant-numeric: tabular-nums; }
+/* each card's drawing sits at its right edge, small on a closed card and twice the size on the open one */
+.im-card__g { position: absolute; right: 20px; top: 18px; width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  pointer-events: none; transform-origin: 100% 0; transform: translateY(8px) scale(2); transition: transform .6s var(--im-ease); }
+.im-card__g * { vector-effect: non-scaling-stroke; }
+.im-card strong { font: 400 clamp(19px, 1.6vw, 23px)/1.15 var(--font-display); letter-spacing: -.02em; text-wrap: balance; }
 
 /* ------------------------------------------------------------------ the service area */
 main > section.im-areas.im { background: var(--im-paper); }
@@ -391,15 +405,12 @@ main > section.im-request.im { background: linear-gradient(180deg, var(--im-pape
   .im-films__grid > :last-child { grid-column: auto; }
   .im-steps { grid-template-columns: minmax(0, 1fr); }
   .im-bars li { grid-template-columns: minmax(0, 132px) minmax(0, 1fr) 3ch; gap: 12px; padding-inline: 4px; font-size: 16px; }
-  .im-deck { justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; min-height: 0; margin-inline: calc(-1 * var(--gut)); padding: 8px var(--gut) 26px; scrollbar-width: none; }
-  .im-deck::-webkit-scrollbar { display: none; }
-  .im-card, .im-card:first-child { width: 62vw; max-width: 264px; margin-left: 0; padding: 20px; scroll-snap-align: center; --r: 0deg; --y: 0px; }
-  .im-card:hover, .im-card:focus-visible, .im-card.is-up { transform: none; }
-  .im-card strong { font-size: 24px; } .im-card__big { font-size: 64px; } .im-card__g { width: 44px; }
+  .im-card__head { padding-right: 60px; }
+  .im-card__more p { padding: 0 20px 20px; }
+  .im-card__g { transform: none; }
   .im-map__svg { width: 131%; max-width: none; margin-left: -31%; }
   .im-map__legend { position: static; max-width: none; padding: 4px 20px 20px; min-height: 104px; align-content: start; }
   .im-map__state { font-size: 42px; } .im-county__name { font-size: 36px; } .im-town text, .im-office__tag { font-size: 36px; stroke-width: 9px; } .im-map__water { font-size: 34px; }
-  .im-deck .im-card { transform: none; }
   .im-town circle { r: 9px; } .im-office__dot, .im-office__ring { r: 14px; }
   .im-foot__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .btn.im-xl { width: 100%; height: 60px; font-size: 18px; }
@@ -409,7 +420,37 @@ main > section.im-request.im { background: linear-gradient(180deg, var(--im-pape
   .im-hero__cta .im-magnet .btn { width: 100%; }
   .im-qa details p { padding-right: 8px; }
 }
+/* a short phone: the words tighten so both buttons stand on the first screen */
+@media (max-width: 767px) and (max-height: 700px) {
+  main > section.im-hero.im > .wrap { padding-top: calc(var(--nav) + 16px); padding-bottom: 28px; }
+  .im-status { margin-bottom: 14px; }
+  .im-display { font-size: clamp(34px, min(12vw, 7.4svh), 46px); }
+  .im-h1sub { margin-top: 12px; font-size: 16px; }
+  .im-hero__row { margin-top: 12px; gap: var(--s-5); }
+  .im-hero__lede { font-size: 15px; line-height: 1.5; }
+  .im-hero__cta { margin-top: 16px; }
+}
+/* a phone on its side: the sentence and the film share a row, and both buttons stand side by side under them */
+@media (min-width: 600px) and (max-height: 480px) {
+  main > section.im-hero.im > .wrap { padding-top: calc(var(--nav) + 12px); padding-bottom: 20px; }
+  .im-status { margin-bottom: 10px; }
+  .im-display { font-size: clamp(32px, min(7.3vw, 10svh), 64px); }
+  .im-h1sub { margin-top: 8px; font-size: 16px; max-width: none; }
+  .im-hero__row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "lede play" "cta cta"; gap: 12px var(--s-6); margin-top: 10px; }
+  .im-hero__row > div { display: contents; }
+  .im-hero__lede { grid-area: lede; font-size: 15px; line-height: 1.45; }
+  .im-hero__cta { grid-area: cta; margin-top: 0; flex-wrap: nowrap; }
+  .im-hero__cta .btn, .im-hero__cta .im-magnet { flex: 0 0 auto; width: auto; }
+  .im-play { grid-area: play; }
+  .im-play__disc { width: 44px; height: 44px; }
+}
+/* the smallest phones on their side: one column, so the film link follows the buttons */
+@media (min-width: 600px) and (max-width: 799px) and (max-height: 480px) {
+  .im-hero__row { grid-template-columns: minmax(0, 1fr); grid-template-areas: "lede" "cta" "play"; }
+  .im-hero__lede { max-width: none; }
+}
 @media (prefers-reduced-motion: reduce) {
+  .im-deck.is-live .im-card__more, .im-card__g { transition: none !important; }
   .im-curtain { display: none; }
   .im-js .im-line > span, .im-js .im-fade { transform: none; opacity: 1; transition: none; }
   .im-dot::after, .im-office__ring { animation: none; }

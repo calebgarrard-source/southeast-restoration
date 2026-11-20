@@ -406,17 +406,25 @@ function films() {
   });
 }
 
-/* ------------------------------------------------------------------ the five house rules: a fanned deck */
+/* ------------------------------------------------------------------ the five house rules: a stack of cards, one open at a time */
 function deck() {
-  const d = $('.im-deck'), note = $('.im-deck__note'); if (!d || !note) return;
-  const base = note.textContent;
-  const say = li => { note.textContent = li ? li.dataset.note : base; };
-  $$('li', d).forEach(li => {
-    li.addEventListener('pointerenter', () => say(li)); li.addEventListener('focus', () => say(li));
-    li.addEventListener('click', () => { const up = !li.classList.contains('is-up'); $$('li', d).forEach(x => x.classList.remove('is-up')); li.classList.toggle('is-up', up); say(up ? li : null); });
-    li.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); } });
+  const d = $('.im-deck'); if (!d) return;
+  const cards = $$('.im-card', d), fine = matchMedia('(hover: hover) and (pointer: fine)');
+  const open = li => cards.forEach(c => { const on = c === li; c.classList.toggle('is-up', on); $('.im-card__head', c).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+  cards.forEach(c => {
+    const head = $('.im-card__head', c);
+    head.addEventListener('click', () => open(c));
+    head.addEventListener('focus', () => open(c));
+    // a mouse opens the card it rests on; a finger taps
+    c.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse' && fine.matches) open(c); });
   });
-  d.addEventListener('pointerleave', () => { const up = $('li.is-up', d); say(up); });
+  // every card opens to the same height, set by the longest line, so nothing under the stack moves when the hand changes
+  const notes = $$('.im-card__more p', d);
+  const level = () => { d.style.setProperty('--note-h', '0px'); d.style.setProperty('--note-h', Math.max(...notes.map(p => p.offsetHeight)) + 'px'); };
+  // the first card is in hand to begin with; nothing moves while that is set up
+  d.classList.add('is-setting', 'is-live'); open(cards[0]); level();
+  requestAnimationFrame(() => requestAnimationFrame(() => d.classList.remove('is-setting')));
+  addEventListener('resize', level); if (document.fonts && document.fonts.ready) document.fonts.ready.then(level);
 }
 
 /* ------------------------------------------------------------------ is my town covered? (the five counties on the company's own service map) */
@@ -543,6 +551,7 @@ function scrollLoop(onSeq) {
       if (r.top <= probe && r.bottom > probe) { dark = z.classList.contains('im-dark') || (z.classList.contains('is-live') && (z.dataset.step === '0' || z.dataset.step === '1')); break; }
     }
     doc.dataset.nav = dark ? 'dark' : 'light';
+    doc.dataset.navAt = y > 12 ? 'scroll' : 'top';   // at the very top the bar is clear over the photograph; after that it is solid
     if (row && half && !reduce) row.style.setProperty('--x', (-((y * 0.45) % half)).toFixed(1) + 'px');
     if (photo && !reduce) { const r = photo.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) photo.firstElementChild.style.setProperty('--py', (((r.top + r.height / 2) - innerHeight / 2) * -0.08).toFixed(1) + 'px'); }
   };
