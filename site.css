@@ -460,6 +460,35 @@ main > section.im-request.im { background: linear-gradient(180deg, var(--im-pape
 
 /* === scene:start === */
 /* ---------- the house scene: one drawing, four times of day ---------- */
+/* the moisture finder: on the drying step of the pinned sequence, a lens dragged over the house shows where the
+   structure still holds water. A second copy of the drawing, toned like a moisture reading, behind a round window.
+   The lens is the only thing that moves, and only when it is dragged or stepped with the arrow keys. */
+.im-lens, .im-lens__ring, .im-lens__key { display: none; }
+.im-seq.is-live .im-lens { display: block; position: absolute; inset: 0; z-index: 1; clip-path: circle(var(--lr, 96px) at var(--lx, 53%) var(--ly, 57%)); background: #0a1830; opacity: 0; pointer-events: none; transition: opacity .5s var(--im-ease); }
+.im-seq.is-live .im-lens > .sc { position: absolute; inset: 0; filter: grayscale(1) brightness(.5) contrast(1.3) sepia(1) hue-rotate(178deg) saturate(2.4); }
+.im-seq.is-live .im-lens > .sc * { transition: none; }
+.im-lens__wet { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; }
+.im-lens__wet ellipse { filter: blur(9px); }
+.im-seq.is-live .im-lens__ring { display: block; position: absolute; z-index: 4; left: var(--lx, 53%); top: var(--ly, 57%); width: calc(var(--lr, 96px) * 2); height: calc(var(--lr, 96px) * 2); margin: calc(var(--lr, 96px) * -1) 0 0 calc(var(--lr, 96px) * -1); padding: 0; border: 0; border-radius: 50%; background: transparent; box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(15, 30, 49, .35), 0 10px 30px rgba(15, 30, 49, .35); cursor: grab; touch-action: none; opacity: 0; visibility: hidden; transition: opacity .5s var(--im-ease), visibility 0s .5s; }
+.im-seq.is-live .im-lens__ring:active { cursor: grabbing; }
+.im-seq.is-live .im-lens__ring:focus-visible { outline: 3px solid var(--im-amber); outline-offset: 5px; }
+.im-seq.is-live .im-lens__key { display: block; position: absolute; z-index: 4; left: 16px; top: 16px; width: 190px; padding: 10px 12px 11px; border-radius: 10px; background: #fff; color: #0f1e31; box-shadow: 0 6px 20px rgba(15, 30, 49, .22); font: 500 13px/1.3 var(--font-text); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .5s var(--im-ease), transform .5s var(--im-ease), visibility 0s .5s; }
+.im-lens__key b { display: block; font-weight: 600; font-size: 14px; }
+.im-lens__key i { display: block; height: 8px; margin-top: 7px; border-radius: 4px; background: linear-gradient(90deg, #7ff3ff, #2d8cff 45%, #27406b); }
+.im-lens__key span { display: flex; justify-content: space-between; margin-top: 5px; color: #536074; }
+.im-lens__key em { font-style: normal; }
+.im-lens__key p { margin: 8px 0 0; color: #536074; }
+/* a small frame: the key keeps to its title and its scale, clear of the lens */
+.im-seq.is-live .im-seq__frame { container-type: inline-size; }
+@container (max-width: 480px) {
+  .im-seq.is-live .im-lens__key { width: 148px; padding: 8px 10px 9px; font-size: 12px; }
+  .im-lens__key b { font-size: 13px; }
+  .im-lens__key p { display: none; }
+}
+.im-seq.is-live[data-step="2"] .im-lens { opacity: 1; }
+.im-seq.is-live[data-step="2"] .im-lens__ring { opacity: 1; visibility: visible; transition-delay: 0s; }
+.im-seq.is-live[data-step="2"] .im-lens__key { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+
 .sc { display: block; width: 100%; height: 100%; --e: cubic-bezier(.22, 1, .36, 1); }
 .sc * { transition: fill 1s ease, stroke 1s ease, stop-color 1s ease, opacity .7s ease, transform 1.1s var(--e); }
 .sc--still * { transition: none !important; }

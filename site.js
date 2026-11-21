@@ -332,6 +332,68 @@ function menuScenes() {
   if (matchMedia('(min-width: 1024px)').matches) (window.requestIdleCallback || (f => setTimeout(f, 600)))(build);
 }
 
+/* the moisture finder: on the drying step, a lens dragged over the house shows where the structure still holds water.
+   It is a second copy of the same drawing, toned like a moisture reading and seen through a round window.
+   The wet patches are drawn in the drawing's own coordinates, so they stay on the walls at every size.
+   The company's water damage page says finding hidden moisture is what its crews specialise in. */
+function moisture(frame, stage) {
+  const scan = makeScene(2);
+  if (!scan) return;
+  scan.classList.add('sc--still', 'is-in');
+  const lens = document.createElement('div');
+  lens.className = 'im-lens';
+  lens.setAttribute('aria-hidden', 'true');
+  lens.append(scan);
+  lens.insertAdjacentHTML('beforeend', '<svg class="im-lens__wet" viewBox="0 0 720 594" preserveAspectRatio="xMidYMid slice" focusable="false"><g fill="#7ff3ff"><ellipse cx="389" cy="269" rx="57" ry="30"/><ellipse cx="379" cy="341" rx="20" ry="71" fill="#58c8ff"/><ellipse cx="393" cy="410" rx="89" ry="18"/><ellipse cx="453" cy="357" rx="18" ry="42" fill="#2d8cff"/></g></svg>');
+  const ring = document.createElement('button');
+  ring.type = 'button';
+  ring.className = 'im-lens__ring';
+  ring.setAttribute('aria-label', 'Moisture finder. Drag it across the house, or move it with the arrow keys, to see where the structure is still wet.');
+  const key = document.createElement('div');
+  key.className = 'im-lens__key';
+  key.setAttribute('aria-hidden', 'true');
+  key.innerHTML = '<b>Hidden moisture</b><i></i><span><em>Wet</em><em>Dry</em></span><p>Drag the lens across the house.</p>';
+  stage.after(lens);
+  frame.append(ring, key);
+
+  let x = 0, y = 0, R = 96, fx = 0, fy = 0, placed = false, grab = null;
+  const put = () => {
+    const w = frame.clientWidth, h = frame.clientHeight;
+    x = clamp(x, R * 0.4, w - R * 0.4); y = clamp(y, R * 0.4, h - R * 0.4);
+    fx = x / w; fy = y / h;
+    frame.style.setProperty('--lx', x.toFixed(1) + 'px');
+    frame.style.setProperty('--ly', y.toFixed(1) + 'px');
+    frame.style.setProperty('--lr', R.toFixed(1) + 'px');
+  };
+  const home = () => {
+    const w = frame.clientWidth, h = frame.clientHeight;
+    if (!w || !h) return;
+    R = clamp(w * 0.16, 64, 110);
+    if (placed) { x = fx * w; y = fy * h; }
+    else {
+      // it starts over the opened wall, found through the drawing's own coordinates
+      const m = stage.getScreenCTM && stage.getScreenCTM(), f = frame.getBoundingClientRect();
+      if (m) { x = m.a * 384 + m.e - f.left; y = m.d * 338 + m.f - f.top; } else { x = w * 0.53; y = h * 0.57; }
+    }
+    put();
+  };
+  ring.addEventListener('pointerdown', e => { grab = { id: e.pointerId, dx: e.clientX - x, dy: e.clientY - y }; ring.setPointerCapture(e.pointerId); placed = true; });
+  ring.addEventListener('pointermove', e => { if (!grab || e.pointerId !== grab.id) return; x = e.clientX - grab.dx; y = e.clientY - grab.dy; put(); });
+  const drop = e => { if (grab && e.pointerId === grab.id) grab = null; };
+  ring.addEventListener('pointerup', drop);
+  ring.addEventListener('pointercancel', drop);
+  ring.addEventListener('keydown', e => {
+    const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    if (!d) return;
+    e.preventDefault(); placed = true; x += d[0] * 18; y += d[1] * 18; put();
+  });
+  // the drawing leans a little with the pointer: the copy behind the lens leans with it
+  frame.addEventListener('pointermove', () => { scan.style.setProperty('--mx', stage.style.getPropertyValue('--mx') || '0'); scan.style.setProperty('--my', stage.style.getPropertyValue('--my') || '0'); });
+  frame.addEventListener('pointerleave', () => { scan.style.setProperty('--mx', '0'); scan.style.setProperty('--my', '0'); });
+  if ('ResizeObserver' in window) new ResizeObserver(home).observe(frame);
+  requestAnimationFrame(home);
+}
+
 function sequence(seq) {
   const steps = $$('.im-step', seq), frame = $('.im-seq__frame', seq), figs = steps.map(s => $('figure', s));
   if (!frame || figs.some(f => !f)) return () => {};
@@ -362,6 +424,7 @@ function sequence(seq) {
         stage = makeScene(0);
         if (stage) {
           frame.prepend(stage); watchScene(stage);
+          moisture(frame, stage);
           if (fine) {
             frame.addEventListener('pointermove', e => { const r = frame.getBoundingClientRect(); stage.style.setProperty('--mx', ((e.clientX - r.left) / r.width - 0.5).toFixed(3)); stage.style.setProperty('--my', ((e.clientY - r.top) / r.height - 0.5).toFixed(3)); });
             frame.addEventListener('pointerleave', () => { stage.style.setProperty('--mx', '0'); stage.style.setProperty('--my', '0'); });
